@@ -1,0 +1,25 @@
+{
+    "name": "ekipower/symfony-helper",
+	"type": "library",
+    "description": "Some symfony helpers",
+    "keywords": ["symfony", "helper", "bundle", "extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nguyen Tien Hy",
+            "email": "ngtienhy@gmail.com"
+        },
+    ],
+    "require": {
+        "php": ">=5.3.3",
+		"symfony/dependency-injection": ">=2.3"
+    },
+    "autoload": {
+        "psr-0": {"Eki\\Symfony": "src/"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.9.x-dev"
+        }
+    },
+}
