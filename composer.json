@@ -8,11 +8,12 @@
         {
             "name": "Nguyen Tien Hy",
             "email": "ngtienhy@gmail.com"
-        },
+        }
     ],
     "require": {
         "php": ">=5.3.3",
-		"symfony/dependency-injection": ">=2.3"
+		"symfony/dependency-injection": ">=2.3",
+		"symfony/http-kernel":	">=2.3"
     },
     "autoload": {
         "psr-0": {"Eki\\Symfony": "src/"}
@@ -22,4 +23,5 @@
             "dev-master": "0.9.x-dev"
         }
     },
+    "minimum-stability": "dev"
 }
