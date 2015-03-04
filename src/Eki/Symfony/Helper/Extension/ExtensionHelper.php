@@ -32,6 +32,7 @@ class ExtensionHelper
 		{
 			if ($name === $alias)
 			{
+				$configs = array();
 				if (method_exists($extension, 'build' . $bundleName . 'Config'))
 				{
 					$configs = array($this->$method($container));
@@ -88,6 +89,10 @@ class ExtensionHelper
 					$configs[] = Yaml::parse( $file->getContents() ); 
 				}
 			}
+		}
+		else
+		{
+			throw new \LogicException('Cannot find config file.' );
 		}
 
 		return array(
