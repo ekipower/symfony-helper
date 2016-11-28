@@ -146,7 +146,7 @@ class ExtensionHelper
 
 /////////////////////////////
 
-	static private function getConfigFromFile(Extension $extension, $alias, $filename)
+	static private function getConfigFromFile(Extension $extension, $alias, $filename = null)
 	{
 		$configDir = self::configDir($extension);
 		$filename = self::configDir($extension) . "//" . ( $filename === null ? ($alias.'.yml') : $filename );	
@@ -188,7 +188,7 @@ class ExtensionHelper
 		}
 		else
 		{
-			throw new \LogicException('Cannot find config file(s).' );
+			throw new \LogicException("Cannot find config file " . $filename . " for extension " . $alias . "." );
 		}
 
 		return array(
@@ -227,7 +227,7 @@ class ExtensionHelper
             $configArray = self::getConfigFromFile($extension, $alias, $filename);
             $config = $configArray['config'];
             $container->prependExtensionConfig($alias, !$aliasIncluded ? $config : $config[$alias]);
-            if ($configArray['resource_file'] === true)
+            if ($configArray['resource_file'] !== null)
             	$container->addResource(new FileResource($configArray['resource_file']));
         }
 	}
